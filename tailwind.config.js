@@ -1,0 +1,95 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        page: '#F5F6F8',
+        card: '#FFFFFF',
+        brand: {
+          DEFAULT: '#4169E1',
+          50: '#EEF2FF',
+          100: '#E0E7FF',
+          200: '#C7D2FE',
+          300: '#A5B4FC',
+          400: '#818CF8',
+          500: '#4169E1',
+          600: '#3557C7',
+          700: '#2A45A5',
+          800: '#1E3176',
+          900: '#14204E',
+        },
+        ink: {
+          DEFAULT: '#252936',
+          muted: '#7C8494',
+          subtle: '#9EA7B8',
+          light: '#64748B',
+        },
+        border: {
+          DEFAULT: '#E7EAF0',
+          subtle: '#E7EAF0',
+          dark: '#D0D5DD',
+        },
+        status: {
+          positive: '#269B65',
+          'positive-bg': '#EAF7F0',
+          'positive-border': '#C2EAD5',
+          warning: '#E5A12B',
+          'warning-bg': '#FDF6E9',
+          'warning-border': '#F9DFAC',
+          negative: '#D94B4B',
+          'negative-bg': '#FDEEEC',
+          'negative-border': '#F7C6C4',
+        },
+        // Backwards compatibility mappings for existing charcoal classes to light/slate tokens
+        charcoal: {
+          950: '#1A1D24',
+          900: '#252936',
+          850: '#2F3543',
+          800: '#3D4556',
+          750: '#4D566B',
+          700: '#5E6980',
+          600: '#7C8494',
+          500: '#949CB0',
+          400: '#B0B7C6',
+          300: '#CBD1DC',
+          200: '#E2E6EE',
+          100: '#F0F2F6',
+          50: '#F5F6F8',
+        },
+        emerald: {
+          DEFAULT: '#269B65',
+          50: '#EAF7F0',
+          100: '#D5EFE1',
+          200: '#B2E2C8',
+          300: '#7DCBA4',
+          400: '#4EB583',
+          500: '#269B65',
+          600: '#1F8254',
+          700: '#196B44',
+          800: '#145536',
+          900: '#0E3B26',
+          950: '#071F14',
+        },
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+      },
+      boxShadow: {
+        subtle: '0 1px 2px 0 rgba(0, 0, 0, 0.03)',
+        card: '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.04)',
+        dropdown: '0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.03)',
+        modal: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04)',
+      },
+      borderColor: {
+        subtle: '#E7EAF0',
+        'subtle-hover': '#D0D5DD',
+      }
+    },
+  },
+  plugins: [],
+}

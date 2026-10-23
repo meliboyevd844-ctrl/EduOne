@@ -1,0 +1,397 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-page: #F5F6F8;
+    --bg-card: #FFFFFF;
+    --brand-blue: #4169E1;
+    --text-ink: #252936;
+    --text-muted: #7C8494;
+    --border-color: #E7EAF0;
+    --status-positive: #269B65;
+    --status-warning: #E5A12B;
+    --status-negative: #D94B4B;
+  }
+
+  body {
+    background-color: #F5F6F8;
+    color: #252936;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Crisp light scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F5F6F8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D0D5DD;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9EA7B8;
+  }
+}
+
+@layer utilities {
+  /* Crisp dashboard card styling matching reference */
+  .dashboard-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E7EAF0;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  }
+
+  /* Backwards compatibility with previous dark classes, mapped to light clean aesthetic */
+  .glass-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E7EAF0;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  }
+
+  .glass-card-hover {
+    transition: all 0.15s ease-in-out;
+  }
+  .glass-card-hover:hover {
+    border-color: #CBD1DC;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.06);
+  }
+
+  .glass-header {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E7EAF0;
+  }
+
+  .glass-sidebar {
+    background-color: #FFFFFF;
+    border-right: 1px solid #E7EAF0;
+  }
+
+  .emerald-badge-glow {
+    box-shadow: 0 0 8px rgba(38, 155, 101, 0.15);
+  }
+}
+
+/* ============================================
+   SUPER ADMIN DARK GLASSMORPHISM OVERRIDES
+   Matches the sleek neon dark obsidian reference
+   with uniform electric blue button accents.
+   ============================================ */
+
+/* Dark scrollbar for super admin */
+.super-admin-dark ::-webkit-scrollbar-track {
+  background: rgba(8, 12, 20, 0.6);
+}
+.super-admin-dark ::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.2);
+  border-radius: 9999px;
+}
+.super-admin-dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.4);
+}
+
+/* Select dropdown dark theme */
+.super-admin-dark select {
+  background-color: rgba(15, 23, 42, 0.65) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  border-radius: 12px !important;
+}
+.super-admin-dark select option {
+  background: #0D1322;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* White bg cards → dark glass cards matching reference image */
+.super-admin-dark .bg-white,
+.super-admin-dark .dashboard-card,
+.super-admin-dark .glass-card {
+  background: rgba(13, 19, 32, 0.75) !important;
+  backdrop-filter: blur(20px) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Background overrides */
+.super-admin-dark .bg-\[\#F5F6F8\],
+.super-admin-dark .bg-\[\#F8F9FA\] {
+  background: rgba(255, 255, 255, 0.03) !important;
+}
+
+.super-admin-dark .bg-\[\#EEF2FF\] {
+  background: rgba(37, 99, 235, 0.15) !important;
+}
+
+/* Text color overrides */
+.super-admin-dark .text-\[\#252936\] {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+.super-admin-dark .text-\[\#7C8494\] {
+  color: rgba(148, 163, 184, 0.8) !important;
+}
+.super-admin-dark .text-\[\#9EA7B8\] {
+  color: rgba(148, 163, 184, 0.6) !important;
+}
+
+/* UNIFORM BUTTON STYLES & BRAND COLOR (#2563EB / #3B82F6) */
+.super-admin-dark .text-\[\#4169E1\],
+.super-admin-dark .text-amber-400,
+.super-admin-dark .text-amber-500,
+.super-admin-dark .text-\[\#E5A12B\] {
+  color: #60A5FA !important;
+}
+
+.super-admin-dark .bg-\[\#4169E1\],
+.super-admin-dark .bg-amber-500 {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.45) !important;
+  border: 1px solid rgba(96, 165, 250, 0.35) !important;
+}
+
+.super-admin-dark .hover\:bg-\[\#3557C7\]:hover,
+.super-admin-dark .hover\:bg-amber-600:hover {
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%) !important;
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.6) !important;
+}
+
+/* Uniform Primary Button Utility */
+.super-admin-dark .sa-btn-primary,
+.super-admin-dark button[class*="bg-amber"],
+.super-admin-dark button[class*="bg-\[\#E5A12B\]"] {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.4) !important;
+  border: 1px solid rgba(96, 165, 250, 0.35) !important;
+  color: #FFFFFF !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.super-admin-dark .sa-btn-primary:hover,
+.super-admin-dark button[class*="bg-amber"]:hover,
+.super-admin-dark button[class*="bg-\[\#E5A12B\]"]:hover {
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%) !important;
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.6) !important;
+  transform: translateY(-1px);
+}
+
+/* Border overrides */
+.super-admin-dark .border-\[\#E7EAF0\] {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.super-admin-dark .border-\[\#C7D2FE\],
+.super-admin-dark .border-amber-400\/40,
+.super-admin-dark .border-amber-500\/30 {
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Hover states */
+.super-admin-dark .hover\:bg-\[\#F5F6F8\]:hover,
+.super-admin-dark .hover\:bg-\[\#EEF2FF\]:hover {
+  background: rgba(37, 99, 235, 0.12) !important;
+}
+.super-admin-dark .hover\:text-\[\#252936\]:hover {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+.super-admin-dark .hover\:text-\[\#4169E1\]:hover,
+.super-admin-dark .hover\:text-amber-400:hover {
+  color: #93C5FD !important;
+}
+
+/* Status positive green */
+.super-admin-dark .text-\[\#269B65\] {
+  color: #34D399 !important;
+}
+
+/* Status negative red */
+.super-admin-dark .text-\[\#D94B4B\] {
+  color: #F87171 !important;
+}
+
+/* Input fields dark */
+.super-admin-dark input[type="text"],
+.super-admin-dark input[type="search"],
+.super-admin-dark input[type="email"],
+.super-admin-dark input[type="number"],
+.super-admin-dark input[type="tel"],
+.super-admin-dark input[type="password"],
+.super-admin-dark textarea {
+  background: rgba(15, 23, 42, 0.65) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 12px !important;
+}
+.super-admin-dark input::placeholder,
+.super-admin-dark textarea::placeholder {
+  color: rgba(148, 163, 184, 0.4) !important;
+}
+.super-admin-dark input:focus,
+.super-admin-dark textarea:focus {
+  border-color: rgba(59, 130, 246, 0.5) !important;
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.25) !important;
+}
+
+/* Table row hover */
+.super-admin-dark table tbody tr:hover {
+  background: rgba(37, 99, 235, 0.04) !important;
+}
+.super-admin-dark table thead tr {
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Divide lines */
+.super-admin-dark .divide-\[\#E7EAF0\] > * + * {
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Font mono items */
+.super-admin-dark .font-mono {
+  color: inherit;
+}
+
+/* Button outlines */
+.super-admin-dark button[class*="border-\[#E7EAF0\]"],
+.super-admin-dark .border-\[\#E7EAF0\] {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Modal override */
+.super-admin-dark .fixed.inset-0.bg-black\/40 {
+  background: rgba(3, 7, 18, 0.8) !important;
+  backdrop-filter: blur(12px) !important;
+}
+.super-admin-dark .fixed.inset-0 .bg-white {
+  background: #0D1322 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  border-radius: 24px !important;
+}
+.super-admin-dark .fixed.inset-0 .bg-\[\#F8F9FA\],
+.super-admin-dark .fixed.inset-0 .bg-\[\#F5F6F8\] {
+  background: #090E1A !important;
+}
+
+/* Shadow overrides */
+.super-admin-dark .shadow-sm {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+.super-admin-dark .shadow-dropdown {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* =========================================================
+   REGULAR ADMIN PANEL - DARK MODE SUPPORT (.dark)
+   Toggled via Day/Night Mode button across all panels
+   ========================================================= */
+
+html.dark body {
+  background-color: #0c1017;
+  color: #E2E8F0;
+}
+
+/* Regular Admin Header & Sidebar in Dark Mode */
+html.dark .admin-layout header,
+html.dark header.bg-white {
+  background-color: #121722 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+html.dark .admin-layout aside,
+html.dark aside.bg-white {
+  background-color: #0f141e !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Regular Admin Cards in Dark Mode */
+html.dark:not(.super-admin-active) .bg-white,
+html.dark:not(.super-admin-active) .dashboard-card {
+  background-color: #141a26 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #E2E8F0 !important;
+}
+
+html.dark .admin-layout .bg-white,
+html.dark .admin-layout .dashboard-card {
+  background-color: #141a26 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #E2E8F0 !important;
+}
+
+/* Text colors in dark mode for regular admin */
+html.dark .admin-layout .text-\[\#252936\],
+html.dark .admin-layout .text-gray-900 {
+  color: #F8FAFC !important;
+}
+
+html.dark .admin-layout .text-\[\#7C8494\],
+html.dark .admin-layout .text-gray-500 {
+  color: #94A3B8 !important;
+}
+
+html.dark .admin-layout .text-\[\#9EA7B8\] {
+  color: #64748B !important;
+}
+
+/* Background elements in regular admin dark mode */
+html.dark .admin-layout .bg-\[\#F5F6F8\],
+html.dark .admin-layout .bg-\[\#F8F9FA\] {
+  background-color: #0d121b !important;
+}
+
+html.dark .admin-layout .bg-\[\#EEF2FF\] {
+  background-color: rgba(65, 105, 225, 0.16) !important;
+  border-color: rgba(65, 105, 225, 0.3) !important;
+}
+
+/* Border overrides in regular admin dark mode */
+html.dark .admin-layout .border-\[\#E7EAF0\] {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Inputs in regular admin dark mode */
+html.dark .admin-layout input[type="text"],
+html.dark .admin-layout input[type="search"],
+html.dark .admin-layout input[type="email"],
+html.dark .admin-layout input[type="number"],
+html.dark .admin-layout select,
+html.dark .admin-layout textarea {
+  background-color: #0b0f17 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #F8FAFC !important;
+}
+
+html.dark .admin-layout input::placeholder {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Table rows in regular admin dark mode */
+html.dark .admin-layout table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+/* Dropdown menus in dark mode */
+html.dark .admin-layout .shadow-dropdown {
+  background-color: #141a26 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6) !important;
+}
+
+html.dark .admin-layout .hover\:bg-\[\#F5F6F8\]:hover {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Super Admin Light Mode Overrides (when html has .light) */
+html.light .super-admin-light-mode {
+  background: #F8FAFC !important;
+  color: #1E293B !important;
+}
+
